@@ -31,3 +31,12 @@ class SeasonTeam:
             self.points += 3
         if result == None:
             self.points += 1
+
+    def __lt__(self, other):
+        if isinstance(other, SeasonTeam):
+            return self.points < other.points
+        else:
+            raise TypeError
+
+    def __str__(self):
+        return self.name

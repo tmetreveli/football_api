@@ -17,3 +17,4 @@ headers_for_team_fixtures = {
 	"X-RapidAPI-Key": "360a6b2e86msh867579db8f26f4fp15341bjsna6af61339ebb",
 	"X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
 }
+
