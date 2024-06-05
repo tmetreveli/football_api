@@ -11,6 +11,5 @@ if __name__ == "__main__":
                  ORDER BY team_statistics.points DESC""")
     rows = c.fetchall()
 
-
     for row in rows:
         print(row)

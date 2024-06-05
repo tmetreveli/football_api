@@ -20,7 +20,7 @@ Getting all the team ids from Premier league
 response = requests.get(url_for_team_ids, headers=headers_for_team_ids, params=querystring_for_team_ids)
 
 entries = response.json()["response"]
-teams = [] # Initialize empty list for teams in the league for the particular season
+teams = []  # Initialize empty list for teams in the league for the particular season
 for team in entries:
     teams.append(SeasonTeam(season=season, name=team["team"]["name"], id=team["team"]["id"]))
 
@@ -32,7 +32,6 @@ Iterate through each object of SeasonTeam object(each team in the particular sea
 get the results, including points and goals scored
 """
 for team in teams:
-
 
     querystring_for_team_fixtures = {"league": league_id, "season": season, "team": team.id}
 
@@ -56,7 +55,8 @@ most goals scored
 """
 team_with_most_points = max(teams)
 team_with_most_goals = max(teams, key=lambda x: x.goals)
-print(f"Team with most points {team_with_most_points} : {team_with_most_points.points}, team with most goals {team_with_most_goals}:{team_with_most_goals.goals}")
+print(f"Team with most points {team_with_most_points} : {team_with_most_points.points}, team with most goals "
+      f"{team_with_most_goals}:{team_with_most_goals.goals}")
 
 """
 Load into database

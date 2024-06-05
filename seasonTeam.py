@@ -1,8 +1,8 @@
-from dataclasses import dataclass
 
 """
 Iterate through each object of SeasonTeam
 """
+
 
 class SeasonTeam:
     def __init__(self, season, name, id, points=0, goals=0):
@@ -13,7 +13,7 @@ class SeasonTeam:
         self.goals = goals
 
     def check_winner(self, data: dict) -> bool:
-        print("ID",self.id)
+        print("ID", self.id)
 
         # print(match)
         print(data["teams"]["home"]["id"])
@@ -29,7 +29,7 @@ class SeasonTeam:
     def upgrade_points(self, result):
         if result:
             self.points += 3
-        if result == None:
+        if result is None:
             self.points += 1
 
     def __lt__(self, other):
